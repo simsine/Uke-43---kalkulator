@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+:root{
+    --dark-grey: rgb(32,32,32);
+    --middle-grey: rgb(50,50,50);
+    --light-grey: rgb(59,59,59);
+    --white : rgb(255, 255, 255);
+    --offwhite : rgb(166, 165, 161);
+    --active : rgb(73, 73, 73);
+}
+
+body{
+    height: 100vh;;
+}
+
+main{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+}
+
+.calc-container{
+    background-color: var(--dark-grey);
+    border-radius: 10px;
+    padding: 10px;
+    
+    width: 400px;
+    height: 650px;
+    
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    gap: 3px;
+    grid-template-columns: repeat(4, 0.25fr);
+}
+.calc-text{
+    margin-left: auto;
+    margin-right: 10px;
+    grid-column: 1 / span 4;
+}
+.calc-container > button {
+    background-color: var(--light-grey);
+    color: inherit;
+    border: white 1px;
+    border-radius: 5%;
+    
+    height: 100%;
+    width: 100%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    font-family: inherit;
+    font-size: inherit;
+
+    /* Make text unselectable */
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+}
+.calc-container > button:hover {
+    background-color: var(--middle-grey);
+    cursor:pointer;
+}
+.calc-container > button:active {
+    background-color: var(--active);
+}
