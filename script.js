@@ -1,40 +1,37 @@
 // Variable for calculator text elem
-const calc_text = document.querySelector(".calc-text");
+const calc_text = document.querySelector(".kalk-text");
 
-// List for number button elems
-const number_buttons = document.querySelectorAll(".nummer")
-// Add event listeners for each number button elem
+// List for button elems
+const number_buttons = document.querySelectorAll(".kalk-button")
+// Add event listeners for each button elem
 number_buttons.forEach(elem => {
     elem.addEventListener("click", () => {
-        // Number button event handlers
-        leggTil(elem.innerHTML);
+		switch(elem.innerHTML){
+			case 'CE':
+				fjernAlt();
+				break;
+			case 'C':
+				//
+				break;
+			case '⌫':
+				gåTilbake();
+				break;
+			case '✕':
+				leggTil('*');
+				break;
+			case '+/-':
+				//
+				break;
+			case '=':
+				evaluerInput();
+				break;
+			default:
+				leggTil(elem.innerHTML);
+		}
     })
 })
-// Variable for equals button elem
-const equals_button = document.querySelector(".er-lik")
-// Add event listeners to the equals button
-equals_button.addEventListener("click", () => {
-    // Number button event handlers
-    evaluerInput();
-})
 
-// Variable for CE button elem
-const ce_button = document.querySelector(".fjern-alt")
-// Add event listeners to the equals button
-ce_button.addEventListener("click", () => {
-    // C button event handlers
-    fjernAlt();
-})
-
-// Variable for back button elem
-const back_button = document.querySelector(".tilbake")
-// Add event listeners to the equals button
-back_button.addEventListener("click", () => {
-    // Back button event handlers
-    gåTilbake();
-})
-
-
+// Function to add a character to the text field
 function leggTil(char){
     if(calc_text.innerHTML != 0){
         calc_text.innerHTML += char;
@@ -42,19 +39,24 @@ function leggTil(char){
     }
     calc_text.innerHTML = char;
 }
-
+// Function to evaluate the text field
 function evaluerInput(){
     calc_text.innerHTML = eval(calc_text.innerHTML)
 }
-
+// Function that clears text field
 function fjernAlt(){
     calc_text.innerHTML = "0";
 }
-
+// Function to remove last input
 function gåTilbake(){
-    calc_text.innerHTML = calc_text.innerHTML.slice(0, -1);
+    if (calc_text.innerHTML !== "" || calc_text.innerHTML != "0"){
+        calc_text.innerHTML = calc_text.innerHTML.slice(0, -1);
+		return
+    }
+	if (calc_text.innerHTML === "") {
+		calc_text.innerHTML = "0"
+	}
 }
-
 
 // funksjoner:
 // - leggTil
