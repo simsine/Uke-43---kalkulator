@@ -1,5 +1,6 @@
 // Variable for calculator text elem
 const calc_text = document.querySelector(".kalk-text");
+console.log("aksjhdkajsd")
 
 // List for button elems
 const buttons = document.querySelectorAll("button");
