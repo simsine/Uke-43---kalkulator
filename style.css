@@ -71,3 +71,9 @@ main{
 .kalk-container > button:active {
     background-color: var(--active);
 }
+
+@media screen and (max-width: 450px) {
+    body{
+        background-color: var(--dark-grey);
+    }
+}
