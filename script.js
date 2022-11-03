@@ -2,9 +2,9 @@
 const calc_text = document.querySelector(".kalk-text");
 
 // List for button elems
-const number_buttons = document.querySelectorAll(".kalk-button")
+const buttons = document.querySelectorAll("button");
 // Add event listeners for each button elem
-number_buttons.forEach(elem => {
+buttons.forEach(elem => {
     elem.addEventListener("click", () => {
 		switch(elem.innerHTML){
 			case 'CE':

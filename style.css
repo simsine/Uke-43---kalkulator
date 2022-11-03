@@ -76,4 +76,7 @@ main{
     body{
         background-color: var(--dark-grey);
     }
+    a {
+        color:#809fff;;
+    }
 }
