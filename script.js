@@ -1,13 +1,12 @@
 // Variable for calculator text elem
 const calc_text = document.querySelector(".kalk-text");
-console.log("aksjhdkajsd")
 
 // List for button elems
 const buttons = document.querySelectorAll("button");
 // Add event listeners for each button elem
-buttons.forEach(elem => {
-    elem.addEventListener("click", () => {
-		switch(elem.innerHTML){
+buttons.forEach(button => {
+    button.addEventListener("click", () => {
+		switch(button.innerHTML){
 			case 'CE':
 				fjernAlt();
 				break;
@@ -27,7 +26,7 @@ buttons.forEach(elem => {
 				evaluerInput();
 				break;
 			default:
-				leggTil(elem.innerHTML);
+				leggTil(button.innerHTML);
 		}
     })
 })
@@ -51,17 +50,10 @@ function fjernAlt(){
 // Function to remove last input
 function gåTilbake(){
     if (calc_text.innerHTML !== "" || calc_text.innerHTML != "0"){
-        calc_text.innerHTML = calc_text.innerHTML.slice(0, -1);
+        calc_text.innerHTML = calc_text.innerHTML.slice(0, -1);	
 		return
     }
 	if (calc_text.innerHTML === "") {
 		calc_text.innerHTML = "0"
 	}
 }
-
-// funksjoner:
-// - leggTil
-// C - Fjern alt
-// x - regneUt
-// <- backspace
-// CE - fjernSisteOperasjon
